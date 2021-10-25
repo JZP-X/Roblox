@@ -1,0 +1,149 @@
+-- Instances:
+
+local AutoScript = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Version = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local Auto = Instance.new("Frame")
+local Button = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Mod = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local UIGridLayout = Instance.new("UIGridLayout")
+local DaShen = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UICorner_5 = Instance.new("UICorner")
+
+--Properties:
+
+AutoScript.Name = "Auto Script"
+AutoScript.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AutoScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = AutoScript
+Main.Active = true
+Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Main.Draggable = true
+Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+Main.Selectable = true
+Main.Size = UDim2.new(0, 335, 0, 235)
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Frame.Draggable = true
+Frame.Position = UDim2.new(-0.00149255991, 0, 0.297297299, 0)
+Frame.Size = UDim2.new(0, 335, 0, 156)
+Frame.ZIndex = 2
+
+UICorner.Parent = Frame
+
+Version.Name = "Version"
+Version.Parent = Frame
+Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Version.BackgroundTransparency = 1.000
+Version.Position = UDim2.new(0, 0, 0.835081458, 0)
+Version.Size = UDim2.new(0, 335, 0, 25)
+Version.Font = Enum.Font.SourceSans
+Version.Text = "V 1.0"
+Version.TextColor3 = Color3.fromRGB(255, 255, 255)
+Version.TextScaled = true
+Version.TextSize = 14.000
+Version.TextWrapped = true
+
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.Position = UDim2.new(0.0240001157, 0, 0.0384615399, 0)
+ScrollingFrame.Size = UDim2.new(0, 326, 0, 124)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+ScrollingFrame.ScrollBarThickness = 5
+
+Auto.Name = "Auto"
+Auto.Parent = ScrollingFrame
+Auto.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Auto.Size = UDim2.new(0, 235, 0, 50)
+
+Button.Name = "Button"
+Button.Parent = Auto
+Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Button.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Button.BorderSizePixel = 5
+Button.Position = UDim2.new(0.796999931, 0, 0.246333003, 0)
+Button.Size = UDim2.new(0, 25, 0, 25)
+Button.Font = Enum.Font.SourceSans
+Button.Text = ""
+Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+Button.TextSize = 14.000
+
+UICorner_2.Parent = Button
+
+Mod.Name = "Mod"
+Mod.Parent = Auto
+Mod.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mod.BackgroundTransparency = 1.000
+Mod.Position = UDim2.new(0.0500000007, 0, 0, 0)
+Mod.Size = UDim2.new(0, 214, 0, 50)
+Mod.Font = Enum.Font.SourceSans
+Mod.Text = "Auto Get Ball"
+Mod.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mod.TextSize = 30.000
+Mod.TextWrapped = true
+
+UICorner_3.Parent = Auto
+
+UIGridLayout.Parent = ScrollingFrame
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 315, 0, 50)
+
+DaShen.Name = "DaShen"
+DaShen.Parent = Main
+DaShen.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+DaShen.Position = UDim2.new(0.200000003, 0, 0.055319149, 0)
+DaShen.Size = UDim2.new(0, 200, 0, 50)
+DaShen.Font = Enum.Font.SourceSans
+DaShen.Text = "DaShen"
+DaShen.TextColor3 = Color3.fromRGB(255, 255, 255)
+DaShen.TextScaled = true
+DaShen.TextSize = 14.000
+DaShen.TextWrapped = true
+
+UICorner_4.Parent = DaShen
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(85, 170, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = DaShen
+
+UICorner_5.Parent = Main
+
+-- Script:
+
+local Players = game:GetService("Players")
+local Character = workspace:FindFirstChild(Players.LocalPlayer.Name)
+
+local State = false
+local CFolder = workspace.obby.Badge
+
+Button.MouseButton1Click:Connect(function()
+	if State == false then
+		State = true
+		Button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		while true do
+			if State == true and Character then
+				for _,v in ipairs(CFolder:GetChildren()) do
+					if v and Character then
+						Character.PrimaryPart.CFrame = v.PrimaryPart.CFrame
+						wait(0.5)
+					end
+				end
+			end
+		end
+	else
+		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		wait(1)
+		State = false
+	end
+end)
