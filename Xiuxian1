@@ -27,7 +27,7 @@ local UICorner_8 = Instance.new("UICorner")
 --Properties:
 
 AutoScript.Name = "Auto Script"
-AutoScript.Parent = game.CoreGui
+AutoScript.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 AutoScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
@@ -164,6 +164,7 @@ LoadIcon.ScaleType = Enum.ScaleType.Fit
 Label.Name = "Label"
 Label.Parent = Load
 Label.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Label.BackgroundTransparency = 1.000
 Label.Position = UDim2.new(0.109375, 0, 0.386363626, 0)
 Label.Size = UDim2.new(0, 250, 0, 50)
 Label.Visible = false
@@ -178,7 +179,7 @@ UICorner_8.Parent = Label
 
 -- Scripts:
 
-local function VDYBP_fake_script() -- ScrollingFrame.AutoScript 
+local function QYBQDW_fake_script() -- ScrollingFrame.AutoScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local Players = game:GetService("Players")
@@ -210,8 +211,8 @@ local function VDYBP_fake_script() -- ScrollingFrame.AutoScript
 		end
 	end)
 end
-coroutine.wrap(VDYBP_fake_script)()
-local function SKJVWP_fake_script() -- LoadIcon.LocalScript 
+coroutine.wrap(QYBQDW_fake_script)()
+local function ITAM_fake_script() -- LoadIcon.LocalScript 
 	local script = Instance.new('LocalScript', LoadIcon)
 
 	local RotationLoad = script.Parent.Parent.RotationLoad
@@ -226,8 +227,8 @@ local function SKJVWP_fake_script() -- LoadIcon.LocalScript
 		end
 	end
 end
-coroutine.wrap(SKJVWP_fake_script)()
-local function XWTUGS_fake_script() -- Load.LoadScript 
+coroutine.wrap(ITAM_fake_script)()
+local function KTNLA_fake_script() -- Load.LoadScript 
 	local script = Instance.new('LocalScript', Load)
 
 	local LogoSound = Instance.new("Sound")
@@ -240,33 +241,34 @@ local function XWTUGS_fake_script() -- Load.LoadScript
 	RotationLoad.Value = true
 	script.Parent.LoadIcon.Visible = true
 	
-	wait(2)
+	wait(3)
 	RotationLoad.Value = false
 	script.Parent.LoadIcon.Visible = false
 	script.Parent.LogoIcon.Visible = true
-	script.Parent.LogoSound:Play()
+	LogoSound:Play()
 	
-	for i = 1, 0, 0.1 do
-		wait(0.1)
-		script.Parent.LogoIcon.ImageTransparency += 0.1
-	end
-	
-	wait(3)
-	for i = 1, 0, 0.1 do
+	for i = 0, 10, 1 do
 		wait(0.1)
 		script.Parent.LogoIcon.ImageTransparency += -0.1
+	end
+	
+	wait(4)
+	for i = 0, 10, 1 do
+		wait(0.1)
+		script.Parent.LogoIcon.ImageTransparency += 0.1
 	end
 	
 	script.Parent.LogoIcon.Visible = false
 	script.Parent.Label.Visible = true
 	
-	for i = 1, 0, 0.1 do
+	for i = 0, 10, 1 do
 		wait(0.1)
-		script.Parent.Label.BackgroundTransparency += 0.1
-		script.Parent.Label.TextTransparency += 0.1
+		script.Parent.Label.BackgroundTransparency += -0.1
+		script.Parent.Label.TextTransparency += -0.1
 	end
 	
+	wait(2)
 	script.Parent.Visible = false
 	script.Parent.Parent.Main.Visible = true
 end
-coroutine.wrap(XWTUGS_fake_script)()
+coroutine.wrap(KTNLA_fake_script)()
