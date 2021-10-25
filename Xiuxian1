@@ -27,7 +27,7 @@ local UICorner_8 = Instance.new("UICorner")
 --Properties:
 
 AutoScript.Name = "Auto Script"
-AutoScript.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AutoScript.Parent = game.CoreGui
 AutoScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
