@@ -27,7 +27,7 @@ local UICorner_8 = Instance.new("UICorner")
 --Properties:
 
 AutoScript.Name = "Auto Script"
-AutoScript.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AutoScript.Parent = game.ServerStorage["一键修仙系统"]
 AutoScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
@@ -143,6 +143,7 @@ LogoIcon.Position = UDim2.new(0.03125, 0, 0.0454545468, 0)
 LogoIcon.Size = UDim2.new(0, 300, 0, 200)
 LogoIcon.Visible = false
 LogoIcon.Image = "rbxassetid://7768628351"
+LogoIcon.ImageTransparency = 1.000
 
 UICorner_7.Parent = LogoIcon
 
@@ -170,13 +171,14 @@ Label.Font = Enum.Font.SourceSans
 Label.Text = "© 2021 DaShen"
 Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 Label.TextSize = 30.000
+Label.TextTransparency = 1.000
 Label.TextWrapped = true
 
 UICorner_8.Parent = Label
 
 -- Scripts:
 
-local function XHQB_fake_script() -- ScrollingFrame.AutoScript 
+local function VDYBP_fake_script() -- ScrollingFrame.AutoScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local Players = game:GetService("Players")
@@ -208,19 +210,38 @@ local function XHQB_fake_script() -- ScrollingFrame.AutoScript
 		end
 	end)
 end
-coroutine.wrap(XHQB_fake_script)()
-local function LWAZ_fake_script() -- Load.LoadScript 
+coroutine.wrap(VDYBP_fake_script)()
+local function SKJVWP_fake_script() -- LoadIcon.LocalScript 
+	local script = Instance.new('LocalScript', LoadIcon)
+
+	local RotationLoad = script.Parent.Parent.RotationLoad
+	
+	while true do
+		wait()
+		if RotationLoad.Value == true then
+			script.Parent.Rotation = script.Parent.Rotation + 5
+			if script.Parent.Rotation == 360 then
+				script.Parent.Rotation = 0
+			end
+		end
+	end
+end
+coroutine.wrap(SKJVWP_fake_script)()
+local function XWTUGS_fake_script() -- Load.LoadScript 
 	local script = Instance.new('LocalScript', Load)
 
-	local RotationLoad = false
+	local LogoSound = Instance.new("Sound")
+	LogoSound.SoundId = "rbxassetid://1264316003"
+	LogoSound.Parent = script.Parent
+	local RotationLoad = script.Parent.RotationLoad
 	script.Parent.Visible = true
 	
 	wait(0.1)
-	RotationLoad = true
+	RotationLoad.Value = true
 	script.Parent.LoadIcon.Visible = true
 	
 	wait(2)
-	RotationLoad = false
+	RotationLoad.Value = false
 	script.Parent.LoadIcon.Visible = false
 	script.Parent.LogoIcon.Visible = true
 	script.Parent.LogoSound:Play()
@@ -245,17 +266,7 @@ local function LWAZ_fake_script() -- Load.LoadScript
 		script.Parent.Label.TextTransparency += 0.1
 	end
 	
-	script.Parent:Destroy()
+	script.Parent.Visible = false
 	script.Parent.Parent.Main.Visible = true
-	
-	while true do
-		wait()
-		if RotationLoad == true then
-			script.Parent.Rotation = script.Parent.Rotation + 5
-			if script.Parent.Rotation == 360 then
-				script.Parent.Rotation = 0
-			end
-		end
-	end
 end
-coroutine.wrap(LWAZ_fake_script)()
+coroutine.wrap(XWTUGS_fake_script)()
