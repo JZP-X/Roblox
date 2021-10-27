@@ -232,7 +232,7 @@ end
 
 wait(2)
 LoadFrame.Visible = false
-MainFrame.Visible = true
+MainFrame.Visible = false
 
 -- Scripts:
 
