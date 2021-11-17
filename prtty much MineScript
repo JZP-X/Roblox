@@ -1,0 +1,112 @@
+local autofarm = false
+
+local AutofarmRocksGUI = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Button = Instance.new("TextButton")
+local Deco = Instance.new("TextLabel")
+
+AutofarmRocksGUI.Name = "AutofarmRocksGUI"
+AutofarmRocksGUI.Parent = game.CoreGui
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = AutofarmRocksGUI
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+MainFrame.BorderSizePixel = 0
+MainFrame.Draggable = true
+MainFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
+MainFrame.Size = UDim2.new(0.150000006, 0, 0.100000001, 0)
+
+Button.Name = "Button"
+Button.Parent = MainFrame
+Button.BackgroundColor3 = Color3.new(0, 0, 0)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.25, 0, 0.400000006, 0)
+Button.Size = UDim2.new(0.5, 0, 0.400000006, 0)
+Button.Font = Enum.Font.SourceSans
+Button.FontSize = Enum.FontSize.Size14
+Button.Text = "OFF"
+Button.TextColor3 = Color3.new(1, 0, 0)
+Button.TextScaled = true
+Button.TextSize = 14
+Button.TextWrapped = true
+
+Deco.Name = "Deco"
+Deco.Parent = MainFrame
+Deco.BackgroundColor3 = Color3.new(1, 1, 1)
+Deco.BackgroundTransparency = 0.89999997615814
+Deco.BorderSizePixel = 0
+Deco.Size = UDim2.new(1, 0, 0.300000012, 0)
+Deco.Font = Enum.Font.SourceSansBold
+Deco.FontSize = Enum.FontSize.Size14
+Deco.Text = "Autofarm Mine"
+Deco.TextColor3 = Color3.new(1, 1, 1)
+Deco.TextScaled = true
+Deco.TextSize = 14
+Deco.TextWrapped = true
+
+Button.MouseButton1Down:connect(function()
+if autofarm == false then
+autofarm = true
+Button.TextColor3 = Color3.new(0, 1, 0)
+Button.Text = "ON"
+else
+autofarm = false
+Button.TextColor3 = Color3.new(1, 0, 0)
+Button.Text = "OFF"
+end
+end)
+
+local goToTP = CFrame.new(0,0,0)
+
+spawn(function() -- find rocks, patch instamine and set tp goal
+game:GetService("RunService").RenderStepped:connect(function()
+if game.Players.LocalPlayer.Character:findFirstChild("pickax") and autofarm then
+local a = workspace.Interactables.Deposits:getChildren()
+for i=1,#a do
+local ores = a[i]:getDescendants()
+for i=1,#ores do
+if ores[i].Name ~= "MineOre" then
+if ores[i].ClassName == "Part" then
+ores[i].CanCollide = false
+end
+else
+game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
+goToTP = CFrame.new(ores[i].Parent.Position+Vector3.new(0,-5, 0))
+ores[i].HoldDuration = 0
+ores[i]:InputHoldBegin()
+ores[i]:InputHoldEnd()
+end
+end
+end
+end
+end)
+end)
+
+spawn(function() -- go to tp
+game:GetService("RunService").RenderStepped:connect(function()
+if game.Players.LocalPlayer.Character:findFirstChild("pickax") and autofarm then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = goToTP
+end
+end)
+end)
+
+spawn(function() -- tp to safe zone when not farming
+game:GetService("RunService").RenderStepped:connect(function()
+if game.Players.LocalPlayer.Character:findFirstChild("pickax") and autofarm then
+if #workspace.Interactables.Deposits:getChildren() == 8 then
+wait(1)
+goToTP = CFrame.new(0,-5,0)
+end
+end
+end)
+end)
+
+spawn(function() -- auto equip pickax
+game:GetService("RunService").RenderStepped:connect(function()
+Deco.Text = "Autofarm Mine | " .. #workspace.Interactables.Deposits:getChildren()-8 .. " left."
+if game.Players.LocalPlayer.Backpack:findFirstChild("pickax") and autofarm then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:findFirstChild("pickax"))
+end
+end)
+end)
