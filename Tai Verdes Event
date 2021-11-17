@@ -1,0 +1,329 @@
+-- Instances:
+
+local GodPro = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local Auto = Instance.new("Frame")
+local Button = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Mod = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Auto2 = Instance.new("Frame")
+local Button_2 = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Mod_2 = Instance.new("TextLabel")
+local UICorner_5 = Instance.new("UICorner")
+local DaSheng = Instance.new("TextLabel")
+local UICorner_6 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UICorner_7 = Instance.new("UICorner")
+local Version = Instance.new("TextLabel")
+local LoadFrame = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local LogoIcon = Instance.new("ImageLabel")
+local UICorner_9 = Instance.new("UICorner")
+local LoadIcon = Instance.new("ImageLabel")
+local UICorner_10 = Instance.new("UICorner")
+local Label = Instance.new("TextLabel")
+local UICorner_11 = Instance.new("UICorner")
+
+--Properties:
+
+GodPro.Name = "GodPro"
+GodPro.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+GodPro.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+GodPro.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = GodPro
+MainFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+MainFrame.Draggable = true
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Size = UDim2.new(0, 335, 0, 235)
+MainFrame.Visible = false
+MainFrame.Draggable = true
+MainFrame.Active = true
+MainFrame.Selectable = true
+
+Frame.Parent = MainFrame
+Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Frame.Draggable = true
+Frame.Position = UDim2.new(-0.00149255991, 0, 0.297297299, 0)
+Frame.Size = UDim2.new(0, 335, 0, 156)
+Frame.ZIndex = 2
+
+UICorner.Parent = Frame
+
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.Position = UDim2.new(0.0240001157, 0, 0.0384615399, 0)
+ScrollingFrame.Size = UDim2.new(0, 326, 0, 124)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+ScrollingFrame.ScrollBarThickness = 5
+
+Auto.Name = "Auto"
+Auto.Parent = ScrollingFrame
+Auto.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Auto.Size = UDim2.new(0, 235, 0, 50)
+
+Button.Name = "Button"
+Button.Parent = Auto
+Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Button.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Button.BorderSizePixel = 5
+Button.Position = UDim2.new(0.796999931, 0, 0.246333003, 0)
+Button.Size = UDim2.new(0, 25, 0, 25)
+Button.Font = Enum.Font.SourceSans
+Button.Text = ""
+Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+Button.TextSize = 14.000
+
+UICorner_2.Parent = Button
+
+Mod.Name = "Mod"
+Mod.Parent = Auto
+Mod.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mod.BackgroundTransparency = 1.000
+Mod.Position = UDim2.new(0.0500000007, 0, 0, 0)
+Mod.Size = UDim2.new(0, 214, 0, 50)
+Mod.Font = Enum.Font.SourceSans
+Mod.Text = "Auto 1"
+Mod.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mod.TextSize = 30.000
+Mod.TextWrapped = true
+
+UICorner_3.Parent = Auto
+
+UIGridLayout.Parent = ScrollingFrame
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 315, 0, 50)
+
+Auto2.Name = "Auto2"
+Auto2.Parent = ScrollingFrame
+Auto2.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Auto2.Size = UDim2.new(0, 235, 0, 50)
+
+Button_2.Name = "Button"
+Button_2.Parent = Auto2
+Button_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Button_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Button_2.BorderSizePixel = 5
+Button_2.Position = UDim2.new(0.796999931, 0, 0.246333003, 0)
+Button_2.Size = UDim2.new(0, 25, 0, 25)
+Button_2.Font = Enum.Font.SourceSans
+Button_2.Text = ""
+Button_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Button_2.TextSize = 14.000
+
+UICorner_4.Parent = Button_2
+
+Mod_2.Name = "Mod"
+Mod_2.Parent = Auto2
+Mod_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mod_2.BackgroundTransparency = 1.000
+Mod_2.Position = UDim2.new(0.0500000007, 0, 0, 0)
+Mod_2.Size = UDim2.new(0, 214, 0, 50)
+Mod_2.Font = Enum.Font.SourceSans
+Mod_2.Text = "Auto 2"
+Mod_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mod_2.TextSize = 30.000
+Mod_2.TextWrapped = true
+
+UICorner_5.Parent = Auto2
+
+DaSheng.Name = "DaSheng"
+DaSheng.Parent = MainFrame
+DaSheng.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+DaSheng.Position = UDim2.new(0.200000003, 0, 0.055319149, 0)
+DaSheng.Size = UDim2.new(0, 200, 0, 50)
+DaSheng.Font = Enum.Font.SourceSans
+DaSheng.Text = "DaSheng"
+DaSheng.TextColor3 = Color3.fromRGB(255, 255, 255)
+DaSheng.TextScaled = true
+DaSheng.TextSize = 14.000
+DaSheng.TextWrapped = true
+
+UICorner_6.Parent = DaSheng
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(85, 170, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = DaSheng
+
+UICorner_7.Parent = MainFrame
+
+Version.Name = "Version"
+Version.Parent = MainFrame
+Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Version.BackgroundTransparency = 1.000
+Version.Position = UDim2.new(0, 0, 0.835081458, 0)
+Version.Size = UDim2.new(0, 335, 0, 25)
+Version.ZIndex = 2
+Version.Font = Enum.Font.SourceSans
+Version.Text = "V 0.1"
+Version.TextColor3 = Color3.fromRGB(255, 255, 255)
+Version.TextScaled = true
+Version.TextSize = 14.000
+Version.TextWrapped = true
+
+LoadFrame.Name = "LoadFrame"
+LoadFrame.Parent = GodPro
+LoadFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+LoadFrame.Position = UDim2.new(0.416666657, 0, 0.398148149, 0)
+LoadFrame.Size = UDim2.new(0, 320, 0, 220)
+LoadFrame.Visible = false
+
+UICorner_8.Parent = LoadFrame
+
+LogoIcon.Name = "LogoIcon"
+LogoIcon.Parent = LoadFrame
+LogoIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LogoIcon.BackgroundTransparency = 1.000
+LogoIcon.Position = UDim2.new(0.03125, 0, 0.0454545468, 0)
+LogoIcon.Size = UDim2.new(0, 300, 0, 200)
+LogoIcon.Visible = false
+LogoIcon.Image = "rbxassetid://7768628351"
+LogoIcon.ImageTransparency = 1.000
+
+UICorner_9.Parent = LogoIcon
+
+LoadIcon.Name = "LoadIcon"
+LoadIcon.Parent = LoadFrame
+LoadIcon.AnchorPoint = Vector2.new(0.5, 0.5)
+LoadIcon.BackgroundColor3 = Color3.fromRGB(34, 141, 255)
+LoadIcon.BackgroundTransparency = 1.000
+LoadIcon.BorderSizePixel = 0
+LoadIcon.Position = UDim2.new(0.498075485, 0, 0.499409914, 0)
+LoadIcon.Size = UDim2.new(0, 255, 0, 180)
+LoadIcon.Visible = false
+LoadIcon.ZIndex = 10
+LoadIcon.Image = "rbxassetid://1921663253"
+LoadIcon.ImageColor3 = Color3.fromRGB(125, 125, 125)
+LoadIcon.ScaleType = Enum.ScaleType.Fit
+
+UICorner_10.Parent = LoadIcon
+
+Label.Name = "Label"
+Label.Parent = LoadFrame
+Label.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Label.BackgroundTransparency = 1.000
+Label.Position = UDim2.new(0.109375, 0, 0.386363626, 0)
+Label.Size = UDim2.new(0, 250, 0, 50)
+Label.Visible = false
+Label.Font = Enum.Font.SourceSans
+Label.Text = "© 2021 DaShen"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.TextSize = 30.000
+Label.TextTransparency = 1.000
+Label.TextWrapped = true
+
+UICorner_11.Parent = Label
+
+-- LoadScript:
+
+local LogoSound = Instance.new("Sound")
+LogoSound.SoundId = "rbxassetid://1264316003"
+LogoSound.Parent = LoadFrame
+
+LoadFrame.Visible = true
+
+wait(0.1)
+LoadIcon.Visible = true
+
+for i = 0, 100, 1 do
+	wait(0.01)
+	LoadIcon.Rotation = LoadIcon.Rotation + 5
+	if LoadIcon.Rotation == 360 then
+		LoadIcon.Rotation = 0
+	end
+end
+
+LoadIcon.Visible = false
+LogoIcon.Visible = true
+LogoSound:Play()
+
+for i = 0, 10, 1 do
+	wait(0.1)
+	LogoIcon.ImageTransparency += -0.1
+end
+
+wait(4)
+for i = 0, 10, 1 do
+	wait(0.1)
+	LogoIcon.ImageTransparency += 0.1
+end
+
+LogoIcon.Visible = false
+Label.Visible = true
+
+for i = 0, 10, 1 do
+	wait(0.1)
+	Label.BackgroundTransparency += -0.1
+	Label.TextTransparency += -0.1
+end
+
+wait(2)
+LoadFrame.Visible = false
+MainFrame.Visible = true
+
+-- Scripts:
+
+local Players = game:GetService("Players")
+local Player = game.Players.LocalPlayer
+local Character = workspace:FindFirstChild(Player.Name)
+local RS = game:GetService("ReplicatedStorage")
+
+local State = false
+local State_2 = false
+local CFolder = workspace.Map.Rings
+local CFolder2 = workspace.Map.SunCollectables
+local HRemote = workspace
+
+Button.MouseButton1Click:Connect(function()
+	if State == false then
+		State = true
+		Button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		if State == true and Character then
+			for _,v in ipairs(CFolder:GetChildren()) do
+				if v and Character then
+					Character.PrimaryPart.CFrame = v.CFrame
+					wait(0.5)
+				end
+			end
+		end
+	else
+		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		wait(0.5)
+		State = false
+	end
+end)
+
+Button_2.MouseButton1Click:Connect(function()
+	if State_2 == false then
+		State_2 = true
+		Button_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		if State_2 == true and Character then
+			for _,v in ipairs(CFolder2:GetChildren()) do
+				if v and Character then
+					Character.PrimaryPart.CFrame = v.CFrame
+					wait(0.5)
+				end
+			end
+		end
+		--while true do
+		--	if State_2 == true then
+		--		HRemote:InvokeServer(1)
+		--		wait(0.01)
+		--	else
+		--		break
+		--	end
+		--end
+	else
+		Button_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		wait(0.5)
+		State_2 = false
+	end
+end)
