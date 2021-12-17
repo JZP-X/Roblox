@@ -513,9 +513,8 @@ Button_3.MouseButton1Click:Connect(function()
 				end
 			end
 		end
-	else
-		TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		wait(0.5)
+		TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		State_3 = false
 	end
 end)
@@ -530,9 +529,8 @@ Button_4.MouseButton1Click:Connect(function()
 		for _,v in pairs (Melee:GetChildren()) do
 			Client:FireServer("Skin", v.Name)
 		end
-	else
-		TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		wait(0.5)
+		TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		State_3 = false
 	end
 end)
@@ -544,9 +542,8 @@ Button_5.MouseButton1Click:Connect(function()
 
 		local Client = RS:WaitForChild("CIient")
 		Client:FireServer("PlaceObject", "Turrets", "Crossbow Turret",CFrame.new(0,0,0,0,0,0,0), -math.huge)
-	else
-		TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		wait(0.5)
+		TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		State_3 = false
 	end
 end)
