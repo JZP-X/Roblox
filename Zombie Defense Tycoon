@@ -449,12 +449,10 @@ Button.MouseButton1Click:Connect(function()
 	if State == false then
 		State = true
 		Button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-		local Client = RS:WaitForChild("CIient")
-		local Zombies = WS:WaitForChild("Zombies")
 		
 		local Client = RS:WaitForChild("CIient")
 		while true do
-			if State_2 == true then
+			if State == true then
 				Client:FireServer("Melee", "Divine Shield", Character)
 				wait(0.01)
 			else
@@ -472,7 +470,9 @@ Button_2.MouseButton1Click:Connect(function()
 	if State_2 == false then
 		State_2 = true
 		Button_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-
+		
+		local Client = RS:WaitForChild("CIient")
+		local Zombies = WS:WaitForChild("Zombies")
 		local function Kill(v)
 			spawn(function()
 				if v:FindFirstChild("Humanoid") then
